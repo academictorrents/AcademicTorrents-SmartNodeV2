@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="JosephPaulCohen" default="start" basedir=".">
+   	
+	<property name="lib" value="lib/"/>
+	<property name="src" value="src/"/>
+	<property name="bin" value="classes/"/>
+	<property name="web" value="web/"/>
+	<property name="tpv" value="tpv/"/>
+	<property name="output" value="output/"/>
+	<property name="tomcat" value="${tpv}/tomcat/"/>
+	
+	<path id="classpath">
+	  <fileset dir="${lib}">
+		  <include name="**/*.jar"/>
+	  </fileset>
+		<pathelement location="${bin}"/>
+	</path>
+	
+	<target name="clean">
+		<delete dir="${bin}"/>
+		<delete dir="${build}"/>
+		<delete dir="${tomcat}/webapps/example"/>
+		<delete file="${tomcat}/webapps/example.war"/>
+	</target>
+	
+	<target name="build">
+		<mkdir dir="${bin}"/>
+		<javac srcdir="${src}" destdir="${bin}" debug="true">
+			<classpath refid="classpath" />
+			<compilerarg value="-g"/>
+		</javac>
+	</target>
+	
+    <target name="war" depends="build">
+    	<mkdir dir="${output}/war/"/>
+        <war destfile="${output}/war/example.war" webxml="${web}/WEB-INF/web.xml">
+            <webinf dir="${web}/WEB-INF" />
+            <lib dir="${lib}" />
+        	<fileset dir="${web}/example/" />
+            <classes dir="${bin}" />
+        </war>
+
+    </target>
+
+    <target name="install" depends="war,uninstall">
+        <copy file="${output}/war/example.war" todir="${tomcat}/webapps" />
+    </target>
+
+    <target name="uninstall">
+        <delete file="${tomcat}/webapps/example.war" />
+    	<delete dir="${tomcat}/webapps/example" />
+    </target>
+	
+	
+	<target name="start" depends="install">
+		<echo>http://localhost:8081/</echo>
+		
+        <java jar="${tomcat}/bin/bootstrap.jar" fork="true">
+            <jvmarg value="-Dcatalina.home=${tomcat}" />
+            <jvmarg value="-Dcatalina.base=${tomcat}" />
+            <jvmarg value="-Xdebug" />
+            <jvmarg value="-Xrunjdwp:transport=dt_socket,address=8001,server=y,suspend=n" />
+        </java>
+	</target>
+</project>
