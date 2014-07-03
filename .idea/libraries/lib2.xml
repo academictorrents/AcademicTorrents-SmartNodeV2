@@ -1,0 +1,24 @@
+<component name="libraryTable">
+  <library name="lib2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/tpv/tomcat/lib/catalina-tribes.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tpv/tomcat/lib/jasper-el.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tpv/tomcat/lib/tomcat-dbcp.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tpv/tomcat/lib/tomcat-i18n-es.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tpv/tomcat/lib/tomcat-i18n-ja.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tpv/tomcat/lib/catalina-ant.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tpv/tomcat/lib/el-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tpv/tomcat/lib/jsp-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tpv/tomcat/lib/jasper-jdt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tpv/tomcat/lib/catalina.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tpv/tomcat/lib/catalina-ha.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tpv/tomcat/lib/tomcat-coyote.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tpv/tomcat/lib/servlet-api.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tpv/tomcat/lib/jasper.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tpv/tomcat/lib/tomcat-i18n-fr.jar!/" />
+      <root url="jar://$PROJECT_DIR$/tpv/tomcat/lib/annotations-api.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
