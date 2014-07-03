@@ -5,7 +5,7 @@ package smartnode.models;
  */
 public class Paper extends Entry {
 
-    private EntryType type = EntryType.Paper;
+    private EntryType type = EntryType.paper;
     private String name;
     private String infohash;
     private long total_size_byes;
@@ -14,6 +14,10 @@ public class Paper extends Entry {
     private int times_completed;
     private long date_added;
     private long date_modified;
+    private String path;
+    private String filename;
+    private EntryStatus status;
+
 
     /**
      *
@@ -90,4 +94,52 @@ public class Paper extends Entry {
      * @return
      */
     public long getDate_modified() { return date_modified; }
+
+    /**
+     *
+     * @return
+     */
+    public EntryStatus getStatus() {
+        return status;
+    }
+
+    /**
+     *
+     * @param status
+     */
+    public void setStatus(EntryStatus status) {
+        this.status = status;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getFilename() {
+        return filename;
+    }
+
+    /**
+     *
+     * @param filename
+     */
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getPath() {
+        return path;
+    }
+
+    /**
+     *
+     * @param path
+     */
+    public void setPath(String path) {
+        this.path = path;
+    }
 }

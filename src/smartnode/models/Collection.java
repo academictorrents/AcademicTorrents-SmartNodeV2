@@ -4,10 +4,6 @@ package smartnode.models;
  * Created by nogueira on 6/19/14.
  */
 
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.net.URI;
-import java.net.URLConnection;
 import java.util.HashMap;
 
 /**
@@ -19,7 +15,7 @@ public class Collection {
     private String urlname;
     private int torrent_count;
     private long total_size_bytes;
-    private boolean mirrored;
+    private boolean mirrored = false;
     private HashMap<String, Entry> torrents;
 
     /**
@@ -34,18 +30,6 @@ public class Collection {
         this.urlname = urlname;
         this.torrent_count = torrent_count;
         this.total_size_bytes = total_size;
-    }
-
-    public Collection(URI address){
-
-        try {
-            URLConnection conn = address.toURL().openConnection();
-            InputStreamReader gas;
-        }
-        catch (Exception e){
-           // add logging here at some point.
-        }
-
     }
 
     /**
@@ -106,4 +90,11 @@ public class Collection {
      */
     public HashMap<String, Entry> getTorrents() { return torrents; }
 
+    /**
+     *
+     * @param torrents
+     */
+    public void setTorrents(HashMap<String, Entry> torrents) {
+        this.torrents = torrents;
+    }
 }

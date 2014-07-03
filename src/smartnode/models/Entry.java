@@ -5,8 +5,12 @@ package smartnode.models;
  */
 public class Entry {
 
-    enum EntryType{
-        Paper, DataSet
+    public enum EntryType{
+        paper, dataset
+    }
+
+    enum EntryStatus{
+        download, seed, would_like, ban, unknown
     }
 
 }
