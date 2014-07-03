@@ -1,5 +1,7 @@
 package smartnode.utils;
 
+import smartnode.models.Entry;
+
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -14,6 +16,7 @@ public class ATLogger {
 
     BufferedWriter log_file_writer;
     Date date;
+    LogLevel logger_level;
 
     public enum LogLevel{
         Error, Info, Warning, Debug
@@ -21,10 +24,21 @@ public class ATLogger {
 
     /**
      *
+     * @param log_file_path
+     * @param level
      */
-    public ATLogger(String log_file_path) {
+    public ATLogger(String log_file_path, LogLevel level) {
         File log_file = new File(log_file_path);
         date = new Date();
+
+        //lowest level of the logger is 3.
+        //TODO add better filtering after
+        if(level == LogLevel.Debug){
+           logger_level = LogLevel.Debug;
+        } else {
+            logger_level = LogLevel.Error;
+        }
+
         try {
             log_file_writer  = new BufferedWriter(new FileWriter(log_file));
         } catch (IOException e){
@@ -51,7 +65,9 @@ public class ATLogger {
                     logWarning(log_message);
                     break;
                 case Debug:
-                    logDebug(log_message);
+                    if(logger_level == LogLevel.Debug) {
+                        logDebug(log_message);
+                    }
                     break;
             }
         }

@@ -82,7 +82,7 @@ public class ATFetcher {
         try {
             // create connection to AT
             logger.log("local string BAD!!", ATLogger.LogLevel.Debug);
-            logger.log("Opening connection to AT Getting collection entries", ATLogger.LogLevel.Debug);
+            logger.log("Opening connection to AT Getting collection entries", ATLogger.LogLevel.Info);
 
             String uri = "http://www.academictorrents.com/collection/" + urlname + ".csv" ;
             logger.log("uri: " + uri, ATLogger.LogLevel.Debug);

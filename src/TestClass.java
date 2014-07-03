@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class TestClass {
 
     public static void main(String [] args){
-        ATLogger logger = new ATLogger("logfile.log");
+        ATLogger logger = new ATLogger("logfile.log", ATLogger.LogLevel.Error);
         ATFetcher fetcher = new ATFetcher(logger);
 
         ArrayList<Collection> collections = fetcher.getCollections();
