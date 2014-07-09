@@ -25,5 +25,8 @@ public class Entry {
     protected String path;
     protected String filename;
     protected EntryStatus status;
+    protected String bibtex;
+    protected byte[] torrent_file;
+
 
 }
