@@ -1,8 +1,16 @@
 package smartnode.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
 /**
  * Created by nogueira on 7/2/14.
  */
+@Entity
+@Table(name = "Entries")
 public class Entry {
 
      private enum EntryType{
@@ -13,19 +21,47 @@ public class Entry {
         download, seed, would_like, ban, unknown
     }
 
+    @Column(name = "type")
     private EntryType type;
+
+    @Column(name = "name")
     private String name;
+
+    @Id
+    @Column(name = "infohash")
     private String infohash;
+
+    @Column(name = "sizebytes")
     private long totalSizeBytes;
+
+    @Column(name = "mirrors")
     private int mirrors;
+
+    @Column(name = "downloaders")
     private int downloaders;
+
+    @Column(name = "timescompleted")
     private int timesCompleted;
+
+    @Column(name = "dateadded")
     private long dateAdded;
+
+    @Column(name = "datemodified")
     private long dateModified;
+
+    @Column(name = "path")
     private String path;
+
+    @Column(name = "filename")
     private String filename;
+
+    @Column(name = "status")
     private EntryStatus status;
+
+    @Column(name = "bibtex")
     private String bibtex;
+
+    @Column(name = "torrentfile")
     private byte[] torrentFile;
 
     // needed for hibernate

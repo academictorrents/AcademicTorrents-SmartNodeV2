@@ -1,5 +1,9 @@
 package smartnode.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 /**
  * Created by nogueira on 6/19/14.
  */
@@ -9,13 +13,25 @@ import java.util.HashMap;
 /**
  *
  */
+@Entity
+@Table(name = "collections")
 public class Collection {
 
+    @Column(name = "name")
     private String name;
+
+    @Column(name = "urlname")
     private String urlname;
-    private int torrent_count;
-    private long total_size_bytes;
+
+    @Column(name = "torrentcount")
+    private int torrentCount;
+
+    @Column(name = "sizebytes")
+    private long totalSizeBytes;
+
+    @Column(name = "mirrored")
     private boolean mirrored = false;
+
     private HashMap<String, Entry> torrents;
 
     // needed for hibernate
@@ -35,8 +51,8 @@ public class Collection {
     public Collection(String collection_name, String urlname, int torrent_count, long total_size) {
         this.name = collection_name;
         this.urlname = urlname;
-        this.torrent_count = torrent_count;
-        this.total_size_bytes = total_size;
+        this.torrentCount = torrent_count;
+        this.totalSizeBytes = total_size;
     }
 
     /**
@@ -67,16 +83,16 @@ public class Collection {
      *
      * @return
      */
-    public int getTorrent_count() {
-        return torrent_count;
+    public int getTorrentCount() {
+        return torrentCount;
     }
 
     /**
      *
      * @return
      */
-    public long getTotal_size_bytes() {
-        return total_size_bytes;
+    public long getTotalSizeBytes() {
+        return totalSizeBytes;
     }
 
     /**
