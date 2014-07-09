@@ -16,7 +16,7 @@ public class Entry {
     private EntryType type;
     private String name;
     private String infohash;
-    private long total_size_byes;
+    private long totalSizeBytes;
     private int mirrors;
     private int downloaders;
     private int timesCompleted;
@@ -40,19 +40,19 @@ public class Entry {
      * @param type
      * @param name
      * @param infohash
-     * @param total_size_byes
+     * @param total_size_bytes
      * @param mirrors
      * @param downloaders
      * @param times_completed
      * @param date_added
      * @param date_modified
      */
-    public Entry(String type, String name, String infohash, long total_size_byes, int mirrors, int downloaders, int times_completed, long date_added, long date_modified) {
+    public Entry(String type, String name, String infohash, long total_size_bytes, int mirrors, int downloaders, int times_completed, long date_added, long date_modified) {
 
         this.type = EntryType.valueOf(type);
         this.name = name;
         this.infohash = infohash;
-        this.total_size_byes = total_size_byes;
+        this.totalSizeBytes = total_size_bytes;
         this.mirrors = mirrors;
         this.downloaders = downloaders;
         this.timesCompleted = times_completed;
@@ -88,7 +88,7 @@ public class Entry {
      *
      * @return
      */
-    public long getTotalSizeByes() { return total_size_byes; }
+    public long getTotalSizeByes() { return totalSizeBytes; }
 
     /**
      *
@@ -162,5 +162,35 @@ public class Entry {
         this.path = path;
     }
 
+    /**
+     *
+     * @return
+     */
+    public byte[] getTorrentFile() {
+        return torrentFile;
+    }
 
+    /**
+     *
+     * @param torrentFile
+     */
+    public void setTorrentFile(byte[] torrentFile) {
+        this.torrentFile = torrentFile;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getBibtex() {
+        return bibtex;
+    }
+
+    /**
+     *
+     * @param bibtex
+     */
+    public void setBibtex(String bibtex) {
+        this.bibtex = bibtex;
+    }
 }
