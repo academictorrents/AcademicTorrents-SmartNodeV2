@@ -26,7 +26,7 @@ public class Entry {
     private String filename;
     private EntryStatus status;
     private String bibtex;
-    private byte[] torrent_file;
+    private byte[] torrentFile;
 
     // needed for hibernate
     /**
