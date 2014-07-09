@@ -19,9 +19,9 @@ public class Entry {
     private long total_size_byes;
     private int mirrors;
     private int downloaders;
-    private int times_completed;
-    private long date_added;
-    private long date_modified;
+    private int timesCompleted;
+    private long dateAdded;
+    private long dateModified;
     private String path;
     private String filename;
     private EntryStatus status;
@@ -55,9 +55,9 @@ public class Entry {
         this.total_size_byes = total_size_byes;
         this.mirrors = mirrors;
         this.downloaders = downloaders;
-        this.times_completed = times_completed;
-        this.date_added = date_added;
-        this.date_modified = date_modified;
+        this.timesCompleted = times_completed;
+        this.dateAdded = date_added;
+        this.dateModified = date_modified;
     }
 
     /**
@@ -88,7 +88,7 @@ public class Entry {
      *
      * @return
      */
-    public long getTotal_size_byes() { return total_size_byes; }
+    public long getTotalSizeByes() { return total_size_byes; }
 
     /**
      *
@@ -100,19 +100,19 @@ public class Entry {
      *
      * @return
      */
-    public int getTimes_completed() { return times_completed; }
+    public int getTimesCompleted() { return timesCompleted; }
 
     /**
      *
      * @return
      */
-    public long getDate_added() { return date_added; }
+    public long getDateAdded() { return dateAdded; }
 
     /**
      *
      * @return
      */
-    public long getDate_modified() { return date_modified; }
+    public long getDateModified() { return dateModified; }
 
     /**
      *

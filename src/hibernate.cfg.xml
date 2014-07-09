@@ -43,7 +43,7 @@
         <property name="hibernate.c3p0.timeout">100</property> <!-- seconds -->
 
         <!--Object Relational Mapping -->
-        <mapping class="joecohen.hibernatedemo.pojos.Client"/>
+        <mapping class=""/>
         <mapping class="joecohen.hibernatedemo.pojos.Matter"/>
         <mapping class="joecohen.hibernatedemo.pojos.Task"/>
         <mapping class="joecohen.hibernatedemo.pojos.Verb"/>
