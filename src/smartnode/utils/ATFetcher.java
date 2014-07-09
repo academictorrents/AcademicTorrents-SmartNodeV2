@@ -96,13 +96,8 @@ public class ATFetcher {
             while((line = reader.readNext()) != null){
                 Entry entry = new Entry() ;
 
-                if(line[0] == "paper"){
-                    entry = new Paper(line[1], line[2], Long.parseLong(line[3]), Integer.parseInt(line[4]),
-                            Integer.parseInt(line[5]), Integer.parseInt(line[6]), Long.parseLong(line[7]), Long.parseLong(line[8]));
-                } else if (line[0] == "Dataset") {
-                    entry = new Dataset(line[1], line[2], Long.parseLong(line[3]), Integer.parseInt(line[4]),
-                            Integer.parseInt(line[5]), Integer.parseInt(line[6]), Long.parseLong(line[7]), Long.parseLong(line[8]));
-                }
+                entry = new Entry(line[0], line[1], line[2], Long.parseLong(line[3]), Integer.parseInt(line[4]),
+                    Integer.parseInt(line[5]), Integer.parseInt(line[6]), Long.parseLong(line[7]), Long.parseLong(line[8]));
 
                 entries.put(line[2], entry);
                 logger.log("Added entry to collection", ATLogger.LogLevel.Debug);

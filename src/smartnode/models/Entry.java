@@ -5,28 +5,162 @@ package smartnode.models;
  */
 public class Entry {
 
-    public enum EntryType{
-        paper, dataset
+     private enum EntryType{
+        Paper, Dataset
     }
 
-    enum EntryStatus{
+    private enum EntryStatus{
         download, seed, would_like, ban, unknown
     }
 
-    protected EntryType type;
-    protected String name;
-    protected String infohash;
-    protected long total_size_byes;
-    protected int mirrors;
-    protected int downloaders;
-    protected int times_completed;
-    protected long date_added;
-    protected long date_modified;
-    protected String path;
-    protected String filename;
-    protected EntryStatus status;
-    protected String bibtex;
-    protected byte[] torrent_file;
+    private EntryType type;
+    private String name;
+    private String infohash;
+    private long total_size_byes;
+    private int mirrors;
+    private int downloaders;
+    private int times_completed;
+    private long date_added;
+    private long date_modified;
+    private String path;
+    private String filename;
+    private EntryStatus status;
+    private String bibtex;
+    private byte[] torrent_file;
+
+    // needed for hibernate
+    /**
+     *
+     */
+    public Entry() {
+    }
+
+    /**
+     *
+     * @param type
+     * @param name
+     * @param infohash
+     * @param total_size_byes
+     * @param mirrors
+     * @param downloaders
+     * @param times_completed
+     * @param date_added
+     * @param date_modified
+     */
+    public Entry(String type, String name, String infohash, long total_size_byes, int mirrors, int downloaders, int times_completed, long date_added, long date_modified) {
+
+        this.type = EntryType.valueOf(type);
+        this.name = name;
+        this.infohash = infohash;
+        this.total_size_byes = total_size_byes;
+        this.mirrors = mirrors;
+        this.downloaders = downloaders;
+        this.times_completed = times_completed;
+        this.date_added = date_added;
+        this.date_modified = date_modified;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public EntryType getType() { return type; }
+
+    /**
+     *
+     * @return
+     */
+    public String getName() { return name; }
+
+    /**
+     *
+     * @return
+     */
+    public String getInfohash() { return infohash; }
+
+    /**
+     *
+     * @return
+     */
+    public int getMirrors() { return mirrors; }
+
+    /**
+     *
+     * @return
+     */
+    public long getTotal_size_byes() { return total_size_byes; }
+
+    /**
+     *
+     * @return
+     */
+    public int getDownloaders() { return downloaders; }
+
+    /**
+     *
+     * @return
+     */
+    public int getTimes_completed() { return times_completed; }
+
+    /**
+     *
+     * @return
+     */
+    public long getDate_added() { return date_added; }
+
+    /**
+     *
+     * @return
+     */
+    public long getDate_modified() { return date_modified; }
+
+    /**
+     *
+     * @return
+     */
+    public EntryStatus getStatus() {
+        return status;
+    }
+
+    /**
+     *
+     * @param status
+     */
+    public void setStatus(EntryStatus status) {
+        this.status = status;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getFilename() {
+        return filename;
+    }
+
+    /**
+     *
+     * @param filename
+     */
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getPath() {
+        return path;
+    }
+
+    /**
+     *
+     * @param path
+     */
+    public void setPath(String path) {
+        this.path = path;
+    }
 
 
 }
