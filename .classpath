@@ -7,5 +7,6 @@
 	<classpathentry kind="lib" path="lib/slf4j-log4j12-1.5.10.jar"/>
 	<classpathentry kind="lib" path="lib/tomcat-coyote.jar" sourcepath="tpv/apachetomcatsrc.zip"/>
 	<classpathentry kind="lib" path="lib/opencsv-2.3.jar"/>
+	<classpathentry kind="lib" path="lib/javacsv.jar" sourcepath="lib/javacsvsrc.zip"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
