@@ -64,11 +64,17 @@ public class Entry {
     @Column(name = "torrentfile")
     private byte[] torrentFile;
 
-    // needed for hibernate
     /**
-     *
+     * needed for hibernate
      */
     public Entry() {
+    }
+    
+    /**
+    * Used for atdownloader
+    */
+    public Entry(String infohash) {
+    	this.infohash = infohash;
     }
 
     /**
