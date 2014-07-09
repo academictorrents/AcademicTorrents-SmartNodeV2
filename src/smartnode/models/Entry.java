@@ -28,11 +28,17 @@ public class Entry {
     private String bibtex;
     private byte[] torrentFile;
 
-    // needed for hibernate
     /**
-     *
+     * needed for hibernate
      */
     public Entry() {
+    }
+    
+    /**
+    * Used for atdownloader
+    */
+    public Entry(String infohash) {
+    	this.infohash = infohash;
     }
 
     /**
