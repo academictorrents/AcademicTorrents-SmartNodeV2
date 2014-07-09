@@ -13,4 +13,17 @@ public class Entry {
         download, seed, would_like, ban, unknown
     }
 
+    protected EntryType type;
+    protected String name;
+    protected String infohash;
+    protected long total_size_byes;
+    protected int mirrors;
+    protected int downloaders;
+    protected int times_completed;
+    protected long date_added;
+    protected long date_modified;
+    protected String path;
+    protected String filename;
+    protected EntryStatus status;
+
 }

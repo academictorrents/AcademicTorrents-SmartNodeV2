@@ -6,18 +6,13 @@ package smartnode.models;
 public class Paper extends Entry {
 
     private EntryType type = EntryType.paper;
-    private String name;
-    private String infohash;
-    private long total_size_byes;
-    private int mirrors;
-    private int downloaders;
-    private int times_completed;
-    private long date_added;
-    private long date_modified;
-    private String path;
-    private String filename;
-    private EntryStatus status;
 
+    // needed for hibernate
+    /**
+     *
+     */
+    public Paper() {
+    }
 
     /**
      *

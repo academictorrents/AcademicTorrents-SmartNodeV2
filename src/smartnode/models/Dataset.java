@@ -6,18 +6,13 @@ package smartnode.models;
 public class Dataset extends Entry{
 
     private Entry.EntryType type = Entry.EntryType.dataset;
-    private String name;
-    private String infohash;
-    private long total_size_byes;
-    private int mirrors;
-    private int downloaders;
-    private int times_completed;
-    private long date_added;
-    private long date_modified;
-    private String path;
-    private String filename;
-    private EntryStatus status;
 
+    // needed for hibernate
+    /**
+     *
+     */
+    public Dataset() {
+    }
 
     /**
      *

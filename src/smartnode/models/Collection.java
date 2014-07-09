@@ -18,6 +18,13 @@ public class Collection {
     private boolean mirrored = false;
     private HashMap<String, Entry> torrents;
 
+    // needed for hibernate
+    /**
+     *
+     */
+    public Collection() {
+    }
+
     /**
      *
      * @param collection_name
@@ -76,7 +83,7 @@ public class Collection {
      *
      * @return
      */
-    public boolean getMirrored() { return mirrored; }
+    public boolean isMirrored() { return mirrored; }
 
     /**
      * @param mirrored
