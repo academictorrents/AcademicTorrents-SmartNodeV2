@@ -32,7 +32,10 @@ public class Collection {
     @Column(name = "mirrored")
     private boolean mirrored = false;
 
-    private HashMap<String, Entry> torrents;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @MapKeyColumn(name = "infohash")
+    @JoinTable(name = "Collection_Entry")
+    private Map<String, Entry> torrents;
 
     // needed for hibernate
     /**
@@ -111,13 +114,13 @@ public class Collection {
      *
      * @return
      */
-    public HashMap<String, Entry> getTorrents() { return torrents; }
+    public Map<String, Entry> getTorrents() { return torrents; }
 
     /**
      *
      * @param torrents
      */
-    public void setTorrents(HashMap<String, Entry> torrents) {
+    public void setTorrents(Map<String, Entry> torrents) {
         this.torrents = torrents;
     }
 }
