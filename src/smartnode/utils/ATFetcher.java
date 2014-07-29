@@ -1,11 +1,11 @@
 package smartnode.utils;
 
 import au.com.bytecode.opencsv.CSVReader;
-import org.hibernate.cfg.AnnotationConfiguration;
 import smartnode.models.Collection;
+import smartnode.models.Dataset;
 import smartnode.models.Entry;
+import smartnode.models.Paper;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.MalformedURLException;
@@ -15,16 +15,12 @@ import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-
 /**
  * Created by nogueira on 7/2/14.
  */
 public class ATFetcher {
 
     private ATLogger logger;
-    private Session session;
 
     /**
      *
@@ -32,8 +28,6 @@ public class ATFetcher {
      */
     public ATFetcher(ATLogger logger) {
         this.logger = logger;
-        SessionFactory sf = HibernateUtil.getSessionFactory();
-        session = sf.openSession();
     }
 
     public ArrayList<Collection> getCollections(){
@@ -60,15 +54,6 @@ public class ATFetcher {
                 collections.add(collection);
                 logger.log("Added collection to collections", ATLogger.LogLevel.Debug);
             }
-
-            //TODO TEST CODE
-            session.beginTransaction();
-
-            for (Collection c: collections){
-             session.save(c);
-            }
-
-            session.close();
 
         }
         catch (URISyntaxException e){

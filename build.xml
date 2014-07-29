@@ -19,8 +19,8 @@
 	<target name="clean">
 		<delete dir="${bin}"/>
 		<delete dir="${build}"/>
-		<delete dir="${tomcat}/webapps/example"/>
-		<delete file="${tomcat}/webapps/example.war"/>
+		<delete dir="${tomcat}/webapps/smartnode"/>
+		<delete file="${tomcat}/webapps/smartnode.war"/>
 	</target>
 	
 	<target name="build">
@@ -33,22 +33,22 @@
 	
     <target name="war" depends="build">
     	<mkdir dir="${output}/war/"/>
-        <war destfile="${output}/war/example.war" webxml="${web}/WEB-INF/web.xml">
+        <war destfile="${output}/war/smartnode.war" webxml="${web}/WEB-INF/web.xml">
             <webinf dir="${web}/WEB-INF" />
             <lib dir="${lib}" />
-        	<fileset dir="${web}/example/" />
+        	<fileset dir="${web}/smartnode/" />
             <classes dir="${bin}" />
         </war>
 
     </target>
 
     <target name="install" depends="war,uninstall">
-        <copy file="${output}/war/example.war" todir="${tomcat}/webapps" />
+        <copy file="${output}/war/smartnode.war" todir="${tomcat}/webapps" />
     </target>
 
     <target name="uninstall">
-        <delete file="${tomcat}/webapps/example.war" />
-    	<delete dir="${tomcat}/webapps/example" />
+        <delete file="${tomcat}/webapps/smartnode.war" />
+    	<delete dir="${tomcat}/webapps/smartnode" />
     </target>
 	
 	
