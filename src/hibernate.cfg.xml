@@ -1,10 +1,9 @@
-<?xml version='1.0' encoding='utf-8'?>
 <!DOCTYPE hibernate-configuration PUBLIC
         "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
-        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 
 <hibernate-configuration>
-    <session-factory>
+<session-factory>
         <!-- Database connection settings -->
         <property name="connection.driver_class">org.hsqldb.jdbcDriver</property>
         <property name="connection.url">jdbc:hsqldb:file:db/testdb;shutdown=true</property>
@@ -23,17 +22,17 @@
         <!-- SQL dialect -->
         <property name="dialect">org.hibernate.dialect.HSQLDialect</property>
 
-        <!-- Enable Hibernate's automatic session context management -->
-        <property name="current_session_context_class">thread</property>
+        <!--&lt;!&ndash; Enable Hibernate's automatic session context management &ndash;&gt;-->
+        <!--<property name="current_session_context_class">thread</property>-->
 
         <!-- Disable the second-level cache  -->
         <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
 
         <!-- Echo all executed SQL to stdout -->
-        <property name="show_sql">false</property>
+        <property name="show_sql">true</property>
 
         <!-- Drop and re-create the database schema on startup -->
-        <property name="hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">create</property>
 
         <!-- configuration pool via c3p0-->
         <property name="hibernate.c3p0.initialPoolSize">1</property>
@@ -43,14 +42,8 @@
         <property name="hibernate.c3p0.timeout">100</property> <!-- seconds -->
 
         <!--Object Relational Mapping -->
-        <mapping class=""/>
-        <mapping class="joecohen.hibernatedemo.pojos.Matter"/>
-        <mapping class="joecohen.hibernatedemo.pojos.Task"/>
-        <mapping class="joecohen.hibernatedemo.pojos.Verb"/>
-        <mapping class="joecohen.hibernatedemo.pojos.Noun"/>
-        <mapping class="joecohen.hibernatedemo.pojos.SubNoun"/>
-        <mapping class="joecohen.hibernatedemo.pojos.SubSubNoun"/>
-        <mapping class="joecohen.hibernatedemo.pojos.VerbNounRelation"/>
-        <mapping class="joecohen.hibernatedemo.pojos.Time"/>
+        <mapping class="smartnode.models.Collection"/>
+        <mapping class="smartnode.models.Entry"/>
+
     </session-factory>
 </hibernate-configuration>

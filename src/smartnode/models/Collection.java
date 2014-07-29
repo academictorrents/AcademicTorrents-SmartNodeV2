@@ -1,14 +1,13 @@
 package smartnode.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Created by nogueira on 6/19/14.
  */
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -20,6 +19,7 @@ public class Collection {
     @Column(name = "name")
     private String name;
 
+    @Id
     @Column(name = "urlname")
     private String urlname;
 
@@ -33,8 +33,9 @@ public class Collection {
     private boolean mirrored = false;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    @MapKeyColumn(name = "infohash")
-    @JoinTable(name = "Collection_Entry")
+    @MapKey(name = "infohash")
+    @JoinTable(name = "Collection_Entry", joinColumns = {@JoinColumn(name = "urlname")},
+               inverseJoinColumns = {@JoinColumn(name = "infohash")})
     private Map<String, Entry> torrents;
 
     // needed for hibernate
